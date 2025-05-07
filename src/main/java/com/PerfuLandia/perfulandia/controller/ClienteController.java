@@ -4,7 +4,6 @@ import com.PerfuLandia.perfulandia.model.Cliente;
 import com.PerfuLandia.perfulandia.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,8 +27,8 @@ public class ClienteController {
 
     @PostMapping
     public ResponseEntity<Cliente> guardar(@RequestBody Cliente cliente){
-        Cliente productoNuevo = clienteService.save(cliente);
-        return ResponseEntity.status(HttpStatus.CREATED).body(productoNuevo);
+        Cliente agregarProducto = clienteService.save(cliente);
+        return ResponseEntity.status(HttpStatus.CREATED).body(agregarProducto);
     }
 
     @GetMapping("/(id)")
