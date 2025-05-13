@@ -1,7 +1,7 @@
 package com.PerfuLandia.perfulandia.service;
 
-import com.PerfuLandia.perfulandia.model.Empleado;
-import com.PerfuLandia.perfulandia.repository.EmpleRepository;
+import com.PerfuLandia.perfulandia.model.EmpleadoVentas;
+import com.PerfuLandia.perfulandia.repository.EmpleVentaRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,20 +10,20 @@ import java.util.List;
 
 @Service
 @Transactional
-public class EmpleService {
+public class EmpleVentaService {
 
     @Autowired
-    private EmpleRepository empleRepository;
+    private EmpleVentaRepository empleRepository;
 
-    public List<Empleado> findAll(){
+    public List<EmpleadoVentas> findAll(){
         return empleRepository.findAll();
     }
 
-    public Empleado findById(long id){
+    public EmpleadoVentas findById(long id){
         return empleRepository.findById(id).get();
     }
 
-    public  Empleado save(Empleado empleado) {
+    public EmpleadoVentas save(EmpleadoVentas empleado) {
         return empleRepository.save(empleado);
     }
 

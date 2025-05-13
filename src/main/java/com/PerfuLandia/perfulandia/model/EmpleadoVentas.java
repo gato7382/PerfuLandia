@@ -11,6 +11,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Empleado {
+public class EmpleadoVentas {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(nullable = false)
+    private int ventas;
+
+    @Column(nullable = false)
+    private String inventario;
 
 }

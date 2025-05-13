@@ -5,24 +5,28 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Data
-@Table(name = "cliente")
+@Table(name = "gerentesurcusal")
 @NoArgsConstructor
 @AllArgsConstructor
+public class GerenteSurcusal {
 
-public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false)
-    private String nombre;
+    private int inventario;
 
     @Column(nullable = false)
-    private String correo;
+    private String reportes;
 
     @Column(nullable = false)
-    private String contraseña;
+    private String sucursal;
+
+    @Column(nullable = false)
+    private int pedidos;
 
 }
