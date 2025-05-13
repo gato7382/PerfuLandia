@@ -17,16 +17,17 @@ public class AdminController {
     private AdminService adminService;
 
     @GetMapping
-    public ResponseEntity<List<Admin>> Listar(){
+    public ResponseEntity<List<Admin>> Listar() {
         List<Admin> admins = adminService.findAll();
-        if (admins.isEmpty()){
+        if (admins.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(admins);
     }
 
     @PostMapping
-    public ResponseEntity<Admin> guardar(@RequestBody Admin admin){
+    public ResponseEntity<Admin> guardar(@RequestBody Admin admin) {
         Admin productoNuevo = adminService.save(admin);
         return ResponseEntity.status(HttpStatus.CREATED).body(productoNuevo);
     }
+}
