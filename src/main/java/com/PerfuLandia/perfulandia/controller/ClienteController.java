@@ -27,8 +27,8 @@ public class ClienteController {
 
     @PostMapping
     public ResponseEntity<Cliente> guardar(@RequestBody Cliente cliente){
-        Cliente agregarProducto = clienteService.save(cliente);
-        return ResponseEntity.status(HttpStatus.CREATED).body(agregarProducto);
+        Cliente guardarCliente = clienteService.save(cliente);
+        return ResponseEntity.status(HttpStatus.CREATED).body(guardarCliente);
     }
 
     @GetMapping("/(id)")
