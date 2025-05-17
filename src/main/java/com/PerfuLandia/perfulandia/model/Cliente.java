@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Entity
 @Data
 @Table(name = "cliente")
 @NoArgsConstructor
 @AllArgsConstructor
-
 
 public class Cliente {
     @Id

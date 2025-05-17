@@ -20,7 +20,7 @@ public class Producto {
     private String nombreProducto;
 
     @Column(nullable = false)
-    private int cantidad;
+    private int cantidadStock;
 
     @Column(nullable = false)
     private double precio;

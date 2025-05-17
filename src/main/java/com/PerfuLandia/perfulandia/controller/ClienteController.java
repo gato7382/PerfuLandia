@@ -31,7 +31,7 @@ public class ClienteController {
         return ResponseEntity.status(HttpStatus.CREATED).body(guardarCliente);
     }
 
-    @GetMapping("/(id)")
+    @PutMapping("/{id}")
     public ResponseEntity<Cliente> actualizar(@PathVariable Integer id, @RequestBody Cliente cliente){
         try {
             Cliente pac = clienteService.findById(id);
@@ -47,8 +47,8 @@ public class ClienteController {
         }
     }
 
-    @DeleteMapping("/(id)")
-    public ResponseEntity<?> eliminar(@PathVariable Long id){
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminar(@PathVariable int id){
         try {
             clienteService.delete(id);
             return ResponseEntity.noContent().build();
