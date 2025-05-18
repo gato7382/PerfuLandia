@@ -31,6 +31,11 @@ public class Gerente {
     @Transient  // Campo calculado dinámicamente (no se guarda en BD)
     private int cantidadEmpleados;
 
+    @PostLoad
+    private void calcularCantidad() {
+        this.cantidadEmpleados = (empleados != null) ? empleados.size() : 0;
+    }
+
     @ManyToOne
     @JoinColumn(name = "admin_id", nullable = false)
     @JsonBackReference("admin-gerente")
